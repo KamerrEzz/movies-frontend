@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../assets/style/components/CarouselItem.scss";
+import PlayIcon from '../assets/static/play-icon.png'
+import plusIcon from '../assets/static/plus-icon.png'
 
 const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
   return (
@@ -10,12 +12,12 @@ const CarouselItem = ({ cover, title, year, contentRating, duration }) => {
         <div>
           <img
             className="carousel-item__details--img"
-            src="../assets/play-icon.png"
+            src={PlayIcon}
             alt="Play Icon"
           />
           <img
             className="carousel-item__details--img"
-            src="../assets/plus-icon.png"
+            src={plusIcon}
             alt="Plus Icon"
           />
         </div>

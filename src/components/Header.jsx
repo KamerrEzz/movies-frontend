@@ -1,24 +1,32 @@
-import React from 'react'
-import '../assets/style/components/Header.scss'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../assets/style/components/Header.scss";
 
-import logo from '../assets/static/logo.jpg'
+import logo from "../assets/static/logo.jpg";
+import usericon from "../assets/static/user-icon.png"
 
 const header = () => {
-    return (
+  return (
     <header className="header">
+      <Link to="/">
         <img className="header__img" src={logo} alt="Kamerrsito" />
-        <div className="header__menu">
-            <div className="header__menu--profile">
-                <img src="../assets/user-icon.png" alt="user-icon"/>
-                <p>Perfil</p>
-            </div>
-            <ul>
-            <li><a href="/">Cuenta</a></li>
-            <li><a href="/">Cerrar Sesión</a></li>
-        </ul>
+      </Link>
+      <div className="header__menu">
+        <div className="header__menu--profile">
+          <img src={usericon}alt="user-icon" />
+          <p>Perfil</p>
         </div>
+        <ul>
+          <li>
+            <Link to="/login">Cuenta</Link>
+          </li>
+          <li>
+            <Link to="/register">Cerrar Sesión</Link>
+          </li>
+        </ul>
+      </div>
     </header>
-    )
-}
+  );
+};
 
-export default header
+export default header;
