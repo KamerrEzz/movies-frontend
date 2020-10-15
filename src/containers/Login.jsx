@@ -1,17 +1,46 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import googleicon from '../assets/static/google-icon.png'
 import twitter from '../assets/static/twitter-icon.png'
 import '../assets/style/components/Login.scss'
 
 const Login = () => {
+  const [state, setstate] = useState({
+    email: ""
+  })
+
+  const handleInput = event => {
+    setstate({
+      ...state,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  const handleSumit = event => {
+    event.preventDefault();
+    console.log(state);
+  }
+
   return (
     <section className="login">
       <section className="login__container">
         <h2>Inicia sesión</h2>
-        <form className="login__container--form">
-          <input className="input" type="text" placeholder="Correo" />
-          <input className="input" type="password" placeholder="Contraseña" />
+        <form className="login__container--form" onSubmit={handleSumit}>
+
+          <input 
+          name= "name"
+          className="input" 
+          type="text" 
+          placeholder="Correo" 
+          onChange={handleInput}
+          />
+          <input 
+          name= "passpord"
+          className="input" 
+          type="password" 
+          placeholder="Contraseña" 
+          onChange={handleInput}/>
+
           <button className="button">Iniciar sesión</button>
           <div className="login__container--remember-me">
             <label>
