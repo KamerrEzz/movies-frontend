@@ -7,3 +7,5 @@ export const deleteFavorite = (payload) => ({
   type: "DELETE_FAVORITE",
   payload,
 });
+
+export const LoginRequest = (payload) => ({ type: "LOGIN", payload });
